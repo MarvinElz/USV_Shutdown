@@ -1,7 +1,11 @@
 #!bin/bash
 
-echo 'Installiere WiringPi'
-sudo apt-get install wiringpi
+echo 'Checken, ob wiringpi installiert ist'
+#sudo apt-get install wiringpi
+if ! dpkg -s 'wiringpi' >/dev/null 2>&1 then
+	echo 'Installiere WiringPi'
+	sudo dpkg -i wiringpi-2.50-1.deb
+fi
 
 echo 'Compiliere Programm'
 g++ USV_Shutdown.cpp -o USV_Shutdown -lwiringPi
