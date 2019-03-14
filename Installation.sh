@@ -2,8 +2,8 @@
 
 echo 'Checken, ob wiringpi installiert ist'
 #sudo apt-get install wiringpi
-if ! dpkg -s 'wiringpi' >/dev/null 2>&1 then
-	echo 'Installiere WiringPi'
+if ! dpkg -s 'wiringpi' >/dev/null 2>&1; then
+	echo 'Installiere piringpi';
 	sudo dpkg -i wiringpi-2.50-1.deb
 fi
 
